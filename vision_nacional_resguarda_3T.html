@@ -1,0 +1,488 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Visión Nacional · Resguarda 3T 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F2E5C;--navy2:#10366B;--blue:#1A56A6;--bluel:#3B7AD4;
+  --orange:#EE7C20;--orangel:#FFB266;--green:#1E8C5A;--greenl:#3FB37D;
+  --red:#C2392B;--redl:#E05A4E;--teal:#0E8A80;--teal-l:#1DB8AC;
+  --bg:#EEF1F8;--panel:#fff;--tint:#F4F8FD;
+  --line:#DDE4EF;--line2:#E8EFF8;--ink:#16243B;--mut:#6B7C95;--mut2:#93A1B8;
+  --sh:0 1px 3px rgba(15,46,92,.06),0 6px 20px -8px rgba(15,46,92,.14);
+  --sh-hover:0 2px 8px rgba(15,46,92,.08),0 16px 40px -12px rgba(15,46,92,.22);
+  --sh-lg:0 24px 60px -28px rgba(15,46,92,.32);
+  --r:16px;--trans:.22s cubic-bezier(.25,.8,.25,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--bg);
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif}
+.wrap{max-width:1160px;margin:0 auto;padding:0 36px 80px}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(150deg,#06192E 0%,#0D2549 45%,#0A3060 80%,#123A73 100%);
+  padding:64px 36px 72px;text-align:center}
+.hero::before,.hero::after{content:'';position:absolute;border-radius:50%;pointer-events:none}
+.hero::before{top:-120px;right:-80px;width:380px;height:380px;
+  background:radial-gradient(circle,rgba(238,124,32,.16) 0%,transparent 70%);
+  animation:drift 11s ease-in-out infinite alternate}
+.hero::after{bottom:-140px;left:-100px;width:420px;height:420px;
+  background:radial-gradient(circle,rgba(26,86,166,.25) 0%,transparent 70%);
+  animation:drift 14s 1s ease-in-out infinite alternate-reverse}
+.hero-eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#8AADD8;
+  font-weight:700;margin-bottom:16px;animation:fadeDown .6s ease both}
+.hero h1{font-size:clamp(26px,4.2vw,44px);font-weight:800;letter-spacing:-.8px;line-height:1.12;
+  max-width:820px;margin:0 auto 14px;animation:fadeDown .6s .1s ease both}
+.hero h1 em{font-style:normal;color:var(--orangel)}
+.hero .sub{font-size:15px;color:#9DB8DA;max-width:640px;margin:0 auto 34px;line-height:1.6;
+  animation:fadeDown .6s .18s ease both}
+.hero-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:0 auto}
+.hkpi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;
+  padding:20px 16px;backdrop-filter:blur(6px);animation:slideUp .55s ease both}
+.hkpi:nth-child(1){animation-delay:.25s}.hkpi:nth-child(2){animation-delay:.33s}
+.hkpi:nth-child(3){animation-delay:.41s}.hkpi:nth-child(4){animation-delay:.49s}
+.hkpi-val{font-family:'Plus Jakarta Sans';font-size:27px;font-weight:800;color:#fff;letter-spacing:-.5px}
+.hkpi-val span{color:var(--orangel)}
+.hkpi-lbl{font-size:11px;color:#8AADD8;margin-top:6px;font-weight:600;line-height:1.4}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;margin-top:34px;
+  background:linear-gradient(135deg,#EE7C20,#FFB266);color:#fff;font-size:12px;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;padding:9px 22px;border-radius:99px;
+  box-shadow:0 6px 20px -4px rgba(238,124,32,.55);animation:pulseGlow 2.6s ease-in-out infinite}
+
+/* ══ SECCIONES ══ */
+.sec-hd{text-align:center;margin:56px 0 8px}
+.sec-hd .eyebrow{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);
+  font-weight:800;margin-bottom:8px}
+.sec-hd h2{font-size:clamp(20px,2.6vw,28px);font-weight:800;color:var(--navy);letter-spacing:-.4px}
+.sec-hd p{font-size:13.5px;color:var(--mut);max-width:620px;margin:10px auto 0;line-height:1.65}
+
+/* ══ RAMOS ══ */
+.ramos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.ramo{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px 24px;box-shadow:var(--sh);position:relative;overflow:hidden;
+  transition:transform var(--trans),box-shadow var(--trans);opacity:0}
+.ramo.vis{animation:slideUp .6s ease both}
+.ramo:hover{transform:translateY(-4px);box-shadow:var(--sh-hover)}
+.ramo::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.ramo.vida::before{background:linear-gradient(90deg,var(--green),var(--greenl))}
+.ramo.gmm::before{background:linear-gradient(90deg,var(--blue),var(--bluel))}
+.ramo.autos::before{background:linear-gradient(90deg,var(--teal),var(--teal-l))}
+.ramo-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;padding:4px 12px;border-radius:6px;margin-bottom:18px}
+.vida .ramo-tag{background:rgba(30,140,90,.12);color:var(--green)}
+.gmm .ramo-tag{background:rgba(26,86,166,.12);color:var(--blue)}
+.autos .ramo-tag{background:rgba(14,138,128,.12);color:var(--teal)}
+.donut-wrap{display:flex;align-items:center;gap:18px;margin-bottom:16px}
+.donut{width:110px;height:110px;flex:0 0 110px}
+.donut circle.track{fill:none;stroke:var(--line2);stroke-width:11}
+.donut circle.fill{fill:none;stroke-width:11;stroke-linecap:round;
+  transform:rotate(-90deg);transform-origin:50% 50%;
+  stroke-dasharray:289;stroke-dashoffset:289;transition:stroke-dashoffset 1.6s cubic-bezier(.17,.67,.35,1)}
+.donut text{font-family:'Plus Jakarta Sans';font-weight:800;font-size:22px;fill:var(--navy)}
+.donut text.small{font-size:8.5px;font-weight:700;fill:var(--mut2)}
+.opp-big{font-family:'Plus Jakarta Sans';font-size:17px;font-weight:800;color:var(--navy);line-height:1.3}
+.opp-sub{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.55}
+.ramo-datos{border-top:1px solid var(--line2);padding-top:14px;margin-top:4px;
+  display:flex;flex-direction:column;gap:8px}
+.dato{display:flex;gap:9px;font-size:12.5px;color:var(--mut);line-height:1.5}
+.dato b{color:var(--navy)}
+.dato::before{content:'▸';flex:0 0 auto;font-weight:800}
+.vida .dato::before{color:var(--green)}
+.gmm .dato::before{color:var(--blue)}
+.autos .dato::before{color:var(--teal)}
+.ejec{margin-top:16px;border-radius:11px;padding:14px 16px}
+.vida .ejec{background:rgba(30,140,90,.07)}
+.gmm .ejec{background:rgba(26,86,166,.07)}
+.autos .ejec{background:rgba(14,138,128,.07)}
+.ejec-t{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.vida .ejec-t{color:var(--green)}.gmm .ejec-t{color:var(--blue)}.autos .ejec-t{color:var(--teal)}
+.ejec ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.ejec li{font-size:12px;color:var(--ink);font-weight:600;display:flex;gap:8px;line-height:1.45}
+.ejec li::before{content:'✓';font-weight:800;flex:0 0 auto}
+.vida .ejec li::before{color:var(--green)}
+.gmm .ejec li::before{color:var(--blue)}
+.autos .ejec li::before{color:var(--teal)}
+
+/* ══ GNP PANEL ══ */
+.gnp{background:linear-gradient(145deg,#06192E 0%,#0D2549 50%,#0A3060 100%);
+  border-radius:var(--r);padding:34px 32px;margin-top:56px;box-shadow:var(--sh-lg);
+  position:relative;overflow:hidden;opacity:0}
+.gnp.vis{animation:slideUp .6s ease both}
+.gnp::before{content:'';position:absolute;top:-70px;right:-70px;width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(238,124,32,.15) 0%,transparent 70%);
+  animation:drift 10s ease-in-out infinite alternate}
+.gnp-eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7BA8D0;
+  font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.gnp-eyebrow::before{content:'';display:inline-block;width:18px;height:2px;background:var(--orangel);border-radius:2px}
+.gnp h3{color:#fff;font-size:21px;font-weight:800;letter-spacing:-.3px;margin-bottom:22px}
+.gnp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gnp-cell{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);
+  border-radius:12px;padding:18px}
+.gnp-num{font-family:'Plus Jakarta Sans';font-size:24px;font-weight:800;color:#5EE89A}
+.gnp-num.o{color:var(--orangel)}.gnp-num.b{color:#7FB8F0}.gnp-num.w{color:#fff}
+.gnp-cap{font-size:11px;color:#7BA8D0;margin-top:6px;line-height:1.5;font-weight:500}
+.gnp-note{font-size:12px;color:#9DB8DA;margin-top:18px;line-height:1.6;position:relative;z-index:1}
+.gnp-note b{color:#fff}
+
+/* ══ EJECUCIÓN RESGUARDA ══ */
+.exec-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:30px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  padding:24px;box-shadow:var(--sh);opacity:0}
+.card.vis{animation:slideUp .6s ease both}
+.card h4{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:16px}
+.meta-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line2)}
+.meta-row:last-child{border-bottom:none}
+.meta-nm{font-size:12.5px;font-weight:700;color:var(--navy);flex:0 0 172px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta-track{flex:1;height:8px;border-radius:99px;background:var(--line2);overflow:hidden;position:relative}
+.meta-fill{height:100%;border-radius:99px;width:0;transition:width 1.5s cubic-bezier(.17,.67,.35,1.05);
+  position:relative;overflow:hidden}
+.meta-fill::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);
+  background-size:200% 100%;animation:barShine 3s 1.6s ease-in-out infinite}
+.meta-pct{font-family:'Plus Jakarta Sans';font-size:12px;font-weight:800;flex:0 0 46px;text-align:right}
+.play{display:flex;flex-direction:column;gap:12px}
+.play-item{display:flex;gap:13px;align-items:flex-start}
+.play-num{width:30px;height:30px;border-radius:9px;flex:0 0 30px;display:grid;place-items:center;
+  font-family:'Plus Jakarta Sans';font-weight:800;font-size:13px;color:#fff;
+  background:linear-gradient(135deg,var(--orange),var(--orangel))}
+.play-item b{font-size:13px;color:var(--navy);display:block}
+.play-item p{font-size:12px;color:var(--mut);margin-top:2px;line-height:1.5}
+
+/* ══ CIERRE MOTIVACIONAL ══ */
+.quote{margin-top:56px;text-align:center;padding:46px 30px;border-radius:var(--r);
+  background:linear-gradient(135deg,rgba(238,124,32,.09),rgba(26,86,166,.07));
+  border:1px solid var(--line);opacity:0}
+.quote.vis{animation:slideUp .6s ease both}
+.quote h3{font-size:clamp(19px,2.6vw,26px);font-weight:800;color:var(--navy);
+  letter-spacing:-.4px;max-width:760px;margin:0 auto;line-height:1.35}
+.quote h3 em{font-style:normal;color:var(--orange)}
+.quote p{font-size:13px;color:var(--mut);margin-top:12px}
+
+/* ══ FOOTER ══ */
+.fuentes{margin-top:44px;font-size:10.5px;color:var(--mut2);line-height:1.8;text-align:center}
+.fuentes b{color:var(--mut)}
+
+/* ══ ANIMACIONES ══ */
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-18px,14px) scale(1.15)}}
+@keyframes barShine{0%{background-position:180% 0}55%,100%{background-position:-80% 0}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 6px 20px -4px rgba(238,124,32,.55)}
+  50%{box-shadow:0 6px 30px 2px rgba(238,124,32,.75)}}
+
+/* ══ EL COSTO DE NO PREVER ══ */
+.catas{background:linear-gradient(150deg,#1C0F14 0%,#2B1220 45%,#3A1025 100%);
+  border-radius:var(--r);padding:40px 34px;margin-top:56px;box-shadow:var(--sh-lg);
+  position:relative;overflow:hidden;opacity:0}
+.catas.vis{animation:slideUp .6s ease both}
+.catas::before{content:'';position:absolute;top:-90px;left:-90px;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(224,90,78,.14) 0%,transparent 70%);
+  animation:drift 12s ease-in-out infinite alternate}
+.catas-eyebrow{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#D99;
+  font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.catas-eyebrow::before{content:'';width:18px;height:2px;background:var(--redl);border-radius:2px}
+.catas h3{color:#fff;font-size:clamp(19px,2.4vw,25px);font-weight:800;letter-spacing:-.3px;
+  max-width:720px;line-height:1.3;margin-bottom:10px}
+.catas .lead{font-size:13.5px;color:#D8AEB6;max-width:760px;line-height:1.7;margin-bottom:26px}
+.catas .lead b{color:#fff}
+.catas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative;z-index:1}
+.cat-cell{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:13px;padding:20px 18px;transition:transform var(--trans),border-color var(--trans)}
+.cat-cell:hover{transform:translateY(-3px);border-color:rgba(224,90,78,.4)}
+.cat-ico{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;margin-bottom:12px;
+  background:rgba(224,90,78,.15)}
+.cat-ico svg{width:20px;height:20px;stroke:#F0968C;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cat-num{font-family:'Plus Jakarta Sans';font-size:22px;font-weight:800;color:#F0968C;letter-spacing:-.4px}
+.cat-cap{font-size:11.5px;color:#C99AA4;margin-top:6px;line-height:1.55}
+.cat-cap b{color:#fff}
+.catas-human{margin-top:24px;padding:20px 24px;border-radius:12px;position:relative;z-index:1;
+  background:rgba(255,255,255,.04);border-left:3px solid var(--redl)}
+.catas-human p{font-size:13.5px;color:#E8C9CF;line-height:1.75;max-width:900px}
+.catas-human p b{color:#fff}
+.catas-human .firma{font-size:11px;color:#B57F8B;margin-top:10px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase}
+
+/* fila financiera extra GNP */
+.gnp-sub2{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7BA8D0;
+  font-weight:800;margin:22px 0 12px;position:relative;z-index:1}
+
+@media(max-width:1000px){
+  .ramos{grid-template-columns:1fr}
+  .catas-grid{grid-template-columns:1fr 1fr}
+  .hero-kpis{grid-template-columns:1fr 1fr}
+  .gnp-grid{grid-template-columns:1fr 1fr}
+  .exec-grid{grid-template-columns:1fr}
+  .wrap{padding:0 18px 60px}
+  .hero{padding:48px 20px 56px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+}
+</style></head><body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Resguarda Consultores · GNP Seguros · Los Mochis, Sinaloa</div>
+  <h1>México está <em>sub-asegurado</em>.<br>Esa es nuestra oportunidad.</h1>
+  <div class="sub">El sector asegurador mexicano rompió por primera vez el billón de pesos en primas durante 2025 — y aun así la penetración apenas roza el 3% del PIB. Cada hogar sin proteger es una cita que todavía no hacemos.</div>
+  <div class="hero-kpis">
+    <div class="hkpi"><div class="hkpi-val" data-count="1" data-fmt="bil">$0</div><div class="hkpi-lbl">billón MXN en primas emitidas en 2025 — récord histórico del sector</div></div>
+    <div class="hkpi"><div class="hkpi-val"><span data-count="8" data-fmt="pct">0%</span></div><div class="hkpi-lbl">crecimiento real del sector en 2025 (12% nominal) — AMIS</div></div>
+    <div class="hkpi"><div class="hkpi-val" data-count="3" data-fmt="pct">0%</div><div class="hkpi-lbl">del PIB es la penetración del seguro en México — enorme espacio por crecer</div></div>
+    <div class="hkpi"><div class="hkpi-val"><span data-count="60" data-fmt="mdp">$0</span></div><div class="hkpi-lbl">millones de pesos pagan las aseguradoras en siniestros cada minuto</div></div>
+  </div>
+  <div class="hero-badge">⚡ Serio inicio de trimestre · 3T 2026</div>
+</div>
+
+<div class="wrap">
+
+  <div class="sec-hd">
+    <div class="eyebrow">Oportunidad Nacional por Ramo</div>
+    <h2>Tres mercados gigantes, tres frentes de ejecución</h2>
+    <p>Los números nacionales no son estadística: son personas sin proteger en nuestra plaza. Cada porcentaje de brecha es mercado disponible para Vida, Gastos Médicos Mayores y Autos.</p>
+  </div>
+
+  <div class="ramos">
+
+    <div class="ramo vida reveal">
+      <span class="ramo-tag">Vida</span>
+      <div class="donut-wrap">
+        <svg class="donut" viewBox="0 0 104 104">
+          <circle class="track" cx="52" cy="52" r="46"/>
+          <circle class="fill" cx="52" cy="52" r="46" stroke="#1E8C5A" data-pct="77"/>
+          <text x="52" y="50" text-anchor="middle" data-count="77" data-fmt="pct">0%</text>
+          <text class="small" x="52" y="64" text-anchor="middle">SIN PROTEGER</text>
+        </svg>
+        <div>
+          <div class="opp-big">8 de cada 10 mexicanos viven sin seguro de vida</div>
+          <div class="opp-sub">Solo ~23% de la población adulta cuenta con protección financiera. La brecha es el mercado.</div>
+        </div>
+      </div>
+      <div class="ramo-datos">
+        <div class="dato">Vida concentra el <b>40% de las primas</b> del país: es el ramo más grande de México y creció <b>10%</b>.</div>
+        <div class="dato">~<b>12 millones</b> tienen vida individual… en un país de 130 millones.</div>
+        <div class="dato">El ahorro-retiro con <b>deducibilidad fiscal</b> (PPR, Consolida, Trasciende) abre puertas en clientes de alto perfil.</div>
+      </div>
+      <div class="ejec">
+        <div class="ejec-t">Áreas de ejecución Resguarda</div>
+        <ul>
+          <li>Ahorro-retiro con deducibilidad fiscal: PPR, Consolida y Trasciende</li>
+          <li>Protección Hombre Clave para empresarios, consejeros y profesionistas</li>
+          <li>Educacionales y dotales: proteger el futuro que la familia ya decidió</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ramo gmm reveal">
+      <span class="ramo-tag">Gastos Médicos Mayores</span>
+      <div class="donut-wrap">
+        <svg class="donut" viewBox="0 0 104 104">
+          <circle class="track" cx="52" cy="52" r="46"/>
+          <circle class="fill" cx="52" cy="52" r="46" stroke="#1A56A6" data-pct="89"/>
+          <text x="52" y="50" text-anchor="middle" data-count="89" data-fmt="pct">0%</text>
+          <text class="small" x="52" y="64" text-anchor="middle">SIN GMM PRIVADO</text>
+        </svg>
+        <div>
+          <div class="opp-big">Solo 1 de cada 10 mexicanos tiene GMM privado</div>
+          <div class="opp-sub">14 millones de asegurados en salud (+6.8% en un año) y el ramo creció 12% — el que más rápido avanza.</div>
+        </div>
+      </div>
+      <div class="ramo-datos">
+        <div class="dato">El <b>gasto de bolsillo</b> en salud llega hasta <b>49% del gasto total</b>: las familias pagan la factura de no estar aseguradas.</div>
+        <div class="dato"><b>GNP es líder nacional de GMM</b> con más de <b>24% de participación</b> — vendemos con la marca más fuerte del ramo.</div>
+        <div class="dato">Las <b>PyMEs</b> mexicanas están sub-cubiertas frente a su crecimiento: el segmento empresarial es la gran mina del ramo (GNP).</div>
+      </div>
+      <div class="ejec">
+        <div class="ejec-t">Áreas de ejecución Resguarda</div>
+        <ul>
+          <li>Personaliza y Versátil: proteger a la familia joven antes del primer siniestro</li>
+          <li>Solicitud GMM digital: menos fricción, más emisión</li>
+          <li>PyMEs y colectivos: el gasto de bolsillo es el argumento de venta</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ramo autos reveal">
+      <span class="ramo-tag">Autos</span>
+      <div class="donut-wrap">
+        <svg class="donut" viewBox="0 0 104 104">
+          <circle class="track" cx="52" cy="52" r="46"/>
+          <circle class="fill" cx="52" cy="52" r="46" stroke="#0E8A80" data-pct="70"/>
+          <text x="52" y="50" text-anchor="middle" data-count="70" data-fmt="pct">0%</text>
+          <text class="small" x="52" y="64" text-anchor="middle">SIN SEGURO</text>
+        </svg>
+        <div>
+          <div class="opp-big">7 de cada 10 autos circulan sin seguro</div>
+          <div class="opp-sub">De ~62 millones de vehículos, solo ~20 millones están asegurados (32%). Estancado desde la pandemia.</div>
+        </div>
+      </div>
+      <div class="ramo-datos">
+        <div class="dato">La prima emitida de autos creció <b>15.6%</b> a inicio de 2025: quien ejecuta, crece a doble dígito.</div>
+        <div class="dato">En provincia la penetración es aún menor que el promedio nacional: <b>Sinaloa es campo abierto</b>.</div>
+        <div class="dato">Autos es la <b>puerta de entrada</b>: un cliente de auto bien atendido se convierte en cliente de Vida y GMM.</div>
+      </div>
+      <div class="ejec">
+        <div class="ejec-t">Áreas de ejecución Resguarda</div>
+        <ul>
+          <li>Cotizar autos en cada contacto de cartera: renovaciones y subsecuentes</li>
+          <li>Cross-sell: de la póliza de auto a la conversación de Vida y GMM</li>
+          <li>Daños y patrimoniales: cotización el mismo día, hogar y empresa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="catas">
+    <div class="catas-eyebrow">El costo de no prever</div>
+    <h3>Cuando la imprevisión llega, no pregunta si la familia estaba lista.</h3>
+    <div class="lead">Estas no son cifras de venta: son las facturas reales que enfrenta una familia mexicana sin protección. Nuestro deber profesional es que nadie en nuestra plaza las conozca de primera mano. <b>Prever no es un gasto — es la diferencia entre un contratiempo y una tragedia patrimonial.</b></div>
+    <div class="catas-grid">
+      <div class="cat-cell">
+        <div class="cat-ico"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="cat-num" data-count="2.6" data-fmt="mdp2">$0</div>
+        <div class="cat-cap">es el <b>costo promedio de atención de un cáncer</b> en México (AMIS). Detectado en etapa IV cuesta hasta <b>4 veces más</b> que en etapa I.</div>
+      </div>
+      <div class="cat-cell">
+        <div class="cat-ico"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+        <div class="cat-num">$600 mil – $1 M</div>
+        <div class="cat-cap">puede costar la <b>cirugía de un infarto</b> (bypass o corazón abierto). El cateterismo inicial: $100–150 mil. Nadie lo agenda: sucede.</div>
+      </div>
+      <div class="cat-cell">
+        <div class="cat-ico"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9l7-6 7 6v11M9 20v-6h6v6"/></svg></div>
+        <div class="cat-num">1 de cada 10</div>
+        <div class="cat-cap">viviendas de Acapulco estaba asegurada cuando golpeó <b>Otis</b> (24 mil de 224 mil, INEGI). El sector pagó <b>$39,343 millones</b> en 44,653 siniestros — los demás perdieron todo sin respaldo.</div>
+      </div>
+      <div class="cat-cell">
+        <div class="cat-ico"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="cat-num">43 de cada 100</div>
+        <div class="cat-cap">pesos que México gasta en salud <b>salen del bolsillo de las familias</b>. El gasto catastrófico en salud sigue empujando hogares enteros a la pobreza.</div>
+      </div>
+    </div>
+    <div class="catas-human">
+      <p>Detrás de cada una de estas cifras hay un nombre, una mesa con una silla vacía, un negocio que cerró, una casa que se quedó a medio reconstruir. Cuando nos sentamos frente a un prospecto no estamos compitiendo contra otra aseguradora: <b>competimos contra el "luego lo veo"</b>. La pandemia y Otis — los dos siniestros más costosos de la historia del país — nos enseñaron lo mismo: la protección solo funciona si se contrata <b>antes</b>. Ese "antes" es hoy, y es exactamente nuestro trabajo.</p>
+      <div class="firma">Consciencia de previsión · Resguarda Consultores</div>
+    </div>
+  </div>
+
+  <div class="gnp reveal2">
+    <div class="gnp-eyebrow">Nuestra Dirección Madre</div>
+    <h3>GNP Seguros — el líder del mercado mexicano respalda cada póliza que colocamos</h3>
+    <div class="gnp-grid">
+      <div class="gnp-cell"><div class="gnp-num o">13.0%</div><div class="gnp-cap">participación de mercado en 2025 — #1 de México (CNSF)</div></div>
+      <div class="gnp-cell"><div class="gnp-num w">$128 mil M</div><div class="gnp-cap">primas emitidas en 2025, creciendo 10.3% vs año anterior</div></div>
+      <div class="gnp-cell"><div class="gnp-num b">+24%</div><div class="gnp-cap">participación en GMM — líder indiscutible del ramo salud</div></div>
+      <div class="gnp-cell"><div class="gnp-num">10.6 M</div><div class="gnp-cap">clientes confían en GNP; resultado neto de $4,577 M en 2025</div></div>
+    </div>
+    <div class="gnp-sub2">Solidez que se demuestra pagando</div>
+    <div class="gnp-grid">
+      <div class="gnp-cell"><div class="gnp-num w">421 mil</div><div class="gnp-cap">casos de GMM Individual atendidos por GNP entre 2020 y 2024</div></div>
+      <div class="gnp-cell"><div class="gnp-num o">$63.8 mil M</div><div class="gnp-cap">pagados por GNP en siniestros de GMM Individual en ese periodo</div></div>
+      <div class="gnp-cell"><div class="gnp-num b">120+ años</div><div class="gnp-cap">de historia respaldando a las familias mexicanas desde 1901</div></div>
+      <div class="gnp-cell"><div class="gnp-num w">$2.4 billones</div><div class="gnp-cap">en activos custodia el sector asegurador — 7% del PIB nacional</div></div>
+    </div>
+    <div class="gnp-note">Cuando un cliente pregunta "¿y si no me pagan?", la respuesta es historia, no promesa: GNP es la aseguradora <b>#1 de México por primas emitidas</b>, regulada por la CNSF, con más de un siglo cumpliendo. Presentarse con GNP es presentarse con la <b>formalidad institucional más sólida del sector financiero patrimonial</b>. Nuestro trabajo en Los Mochis es llevar esa fortaleza a cada familia y empresa del norte de Sinaloa.</div>
+  </div>
+
+  <div class="sec-hd">
+    <div class="eyebrow">Comparativo Nacional · CNSF 2025</div>
+    <h2>Por qué GNP es la aseguradora #1 de México</h2>
+    <p>El mercado mexicano lo disputan gigantes nacionales y multinacionales. Los números de la Comisión Nacional de Seguros y Fianzas son claros: <b>GNP encabeza el sector</b> — y no por un ramo, sino por liderazgo integral.</p>
+  </div>
+
+  <div class="exec-grid">
+    <div class="card reveal2">
+      <h4>Participación de mercado en primas · CNSF 2025</h4>
+      <div class="meta-row"><div class="meta-nm" style="color:var(--orange)">★ GNP Seguros</div><div class="meta-track"><div class="meta-fill" data-w="100" style="background:linear-gradient(90deg,#EE7C20,#FFB266)"></div></div><div class="meta-pct" style="color:var(--orange)">13.0%</div></div>
+      <div class="meta-row"><div class="meta-nm">MetLife México</div><div class="meta-track"><div class="meta-fill" data-w="81" style="background:linear-gradient(90deg,#93A1B8,#B8C3D4)"></div></div><div class="meta-pct" style="color:var(--mut)">10.5%</div></div>
+      <div class="meta-row"><div class="meta-nm">BBVA Seguros</div><div class="meta-track"><div class="meta-fill" data-w="70" style="background:linear-gradient(90deg,#93A1B8,#B8C3D4)"></div></div><div class="meta-pct" style="color:var(--mut)">9.1%</div></div>
+      <div class="meta-row"><div class="meta-nm">Seguros Banorte</div><div class="meta-track"><div class="meta-fill" data-w="62" style="background:linear-gradient(90deg,#93A1B8,#B8C3D4)"></div></div><div class="meta-pct" style="color:var(--mut)">8.1%</div></div>
+      <div class="meta-row"><div class="meta-nm">AXA Seguros</div><div class="meta-track"><div class="meta-fill" data-w="51" style="background:linear-gradient(90deg,#93A1B8,#B8C3D4)"></div></div><div class="meta-pct" style="color:var(--mut)">6.6%</div></div>
+      <div class="meta-row"><div class="meta-nm">Quálitas</div><div class="meta-track"><div class="meta-fill" data-w="49" style="background:linear-gradient(90deg,#93A1B8,#B8C3D4)"></div></div><div class="meta-pct" style="color:var(--mut)">6.4%</div></div>
+      <div style="font-size:11px;color:var(--mut2);margin-top:14px;line-height:1.6">Las 10 mayores aseguradoras concentran ~69% del mercado. GNP sostiene el liderazgo acumulado 2019–2025 (12.2–13.0%). Fuente: CNSF / Rankings LATAM.</div>
+    </div>
+    <div class="card reveal2">
+      <h4>Lo que distingue al líder</h4>
+      <div class="play">
+        <div class="play-item"><div class="play-num">1</div><div><b>Liderazgo integral, no de nicho</b><p>BBVA y Banorte venden desde la ventanilla de un banco; Quálitas depende de un solo ramo (autos). GNP es #1 compitiendo en Vida, GMM, Autos y Daños a la vez — con asesoría profesional, no producto de mostrador.</p></div></div>
+        <div class="play-item"><div class="play-num">2</div><div><b>Mexicana y con 120+ años de historia</b><p>Fundada en 1901, GNP ha respaldado a México a través de revoluciones, crisis y pandemias. MetLife, AXA y Chubb responden a matrices extranjeras; GNP decide y paga aquí.</p></div></div>
+        <div class="play-item"><div class="play-num">3</div><div><b>Líder donde más duele: la salud</b><p>+24% de participación en GMM, 421 mil casos atendidos y $63.8 mil millones pagados en 5 años. Cuando llega el siniestro, la diferencia entre aseguradoras se llama respaldo.</p></div></div>
+        <div class="play-item"><div class="play-num">4</div><div><b>Solidez financiera verificable</b><p>Primas por $128 mil millones (+10.3%), resultado neto de $4,577 M y un sector en su máximo nivel de solvencia desde 2019: casi 4 veces el mínimo regulatorio de la CNSF.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-hd">
+    <div class="eyebrow">Contexto Global</div>
+    <h2>El seguro mueve al mundo — y México apenas despega</h2>
+  </div>
+  <div class="ramos" style="margin-top:22px">
+    <div class="ramo reveal" style="text-align:center;padding:30px 24px">
+      <div class="opp-big" style="font-size:30px;color:var(--navy)" data-count="7.1" data-fmt="bilusd">$0</div>
+      <div class="opp-sub" style="margin-top:10px">de dólares en primas mueve el seguro a nivel mundial cada año (récord histórico, Swiss Re) — una de las industrias financieras más grandes del planeta.</div>
+    </div>
+    <div class="ramo reveal" style="text-align:center;padding:30px 24px">
+      <div class="opp-big" style="font-size:30px;color:var(--orange)">7% vs 3%</div>
+      <div class="opp-sub" style="margin-top:10px">penetración del seguro sobre el PIB: promedio mundial contra México. Alcanzar el estándar global implicaría <b>más que duplicar</b> el mercado mexicano. Ese crecimiento ya empezó — y alguien lo va a capitalizar.</div>
+    </div>
+    <div class="ramo reveal" style="text-align:center;padding:30px 24px">
+      <div class="opp-big" style="font-size:30px;color:var(--green)" data-count="3.1" data-fmt="pct1">0%</div>
+      <div class="opp-sub" style="margin-top:10px">crecerá el seguro mundial en términos reales en 2025 (Swiss Re sigma) — y México crece al doble de ese ritmo: <b>+8% real</b>. Estamos en el mercado correcto, en el momento correcto.</div>
+    </div>
+  </div>
+
+  <div class="quote reveal2">
+    <h3>«En un país donde 8 de cada 10 familias no tienen protección, <em>no vendemos pólizas: cerramos brechas</em>. Que este 3T se note en cada cita.»</h3>
+    <p>Dirección de Agencia Resguarda · Los Mochis, Sinaloa · 3T 2026</p>
+  </div>
+
+  <div class="fuentes">
+    <b>Fuentes:</b> AMIS — cierre de industria 2025 (primas $1 billón MXN, +8% real, ~3% del PIB, $60M/min en siniestros, activos $2.4 billones) · AMIS/Ensanut — penetración Vida (~23% de adultos) y GMM (~10%, 14M asegurados, +6.8%) · AMIS/Condusef — parque vehicular asegurado (~30–32% de 62M) · CNSF/GNP — participación 13.0%, primas $128 mil M (+10.3%), líder GMM +24%, 10.6M clientes, 421 mil casos GMM y $63.8 mil M pagados 2020–2024 · AMIS — Huracán Otis: 44,653 siniestros, $39,343 mdp; INEGI: 24 mil de 224 mil viviendas aseguradas en Acapulco · AMIS/Forbes — costo promedio de atención de cáncer $2.6 mdp; cirugía de infarto $600 mil–$1 M · CNSF/Rankings LATAM — ranking de participación 2025: GNP 13.0%, MetLife 10.5%, BBVA 9.1%, Banorte 8.1%, AXA 6.6%, Quálitas 6.4%; solvencia del sector ~4x el mínimo regulatorio · Swiss Re Institute (sigma) — primas mundiales ~$7.1 billones USD, crecimiento global +3.1% real 2025, penetración promedio mundial ~7% del PIB.<br>
+    Cifras nacionales al cierre 2025 / inicio 2026 · Documento interno de motivación y enfoque comercial · Resguarda Consultores
+  </div>
+</div>
+
+<script>
+// contadores animados
+function animCount(el){
+  var target = parseFloat(el.getAttribute('data-count'));
+  var fmt = el.getAttribute('data-fmt');
+  var start = performance.now(), dur = 1400;
+  function step(now){
+    var t = Math.min((now-start)/dur, 1);
+    var e = 1 - Math.pow(1-t, 3);
+    var v = target * e;
+    if(fmt==='pct') el.textContent = Math.round(v) + '%';
+    else if(fmt==='bil') el.textContent = '$' + v.toFixed(1).replace(/\.0$/,'') + ' billón';
+    else if(fmt==='mdp') el.textContent = '$' + Math.round(v) + ' M';
+    else if(fmt==='mdp2') el.textContent = '$' + v.toFixed(1) + ' millones';
+    else if(fmt==='bilusd') el.textContent = '$' + v.toFixed(1) + ' billones';
+    else if(fmt==='pct1') el.textContent = '+' + v.toFixed(1) + '%';
+    else el.textContent = Math.round(v).toLocaleString('es-MX');
+    if(t<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+// revelado al hacer scroll
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(!en.isIntersecting) return;
+    var el = en.target;
+    el.classList.add('vis');
+    el.querySelectorAll('[data-count]').forEach(animCount);
+    el.querySelectorAll('.fill[data-pct]').forEach(function(c){
+      var p = parseFloat(c.getAttribute('data-pct'));
+      c.style.strokeDashoffset = 289 - (289 * p / 100);
+    });
+    el.querySelectorAll('.meta-fill[data-w]').forEach(function(b){
+      b.style.width = b.getAttribute('data-w') + '%';
+    });
+    io.unobserve(el);
+  });
+},{threshold:.25});
+document.querySelectorAll('.reveal,.reveal2,.card,.gnp,.quote,.catas').forEach(function(el){ io.observe(el); });
+// hero counters de inmediato
+document.querySelectorAll('.hero [data-count]').forEach(animCount);
+</script>
+</body></html>
